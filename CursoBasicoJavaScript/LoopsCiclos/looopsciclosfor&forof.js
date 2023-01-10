@@ -1,4 +1,4 @@
-//Ciclo for
+//*ciclo for
 
 // Aqui estamos creando nuestro array.
 //let students = ['Juliana', 'Maria', 'Leydi', 'Ivan' , 'Andres'];
@@ -20,7 +20,7 @@ que ejecute el saludo*/
 //    callstudents(students[i]);
 //}
 
-//Ciclo for of
+//*Ciclo for of
 
 // Aqui estamos creando nuestro array.
 let students = ['Juliana', 'Maria', 'Leydi', 'Ivan' , 'Andres'];
