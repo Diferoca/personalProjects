@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transferencia bancaria</title>
+</head>
+<body bgcolor="#C3C6CB">
+    <center><img src="digital-banking-icon-with-circuit-background-vector-21173237.png" height="400" width="700">
+        <h1><strong>Welcome to Broken Bank <br></strong></h1> 
+        <h2>The Hours Permitted To Transfer is <br> From 9:00 AM To 12:00 PM In The Morning <br>
+        & <br> In The Afternoon Are From 3:00 PM to 8:00 PM <br> ¡Please, Check The Hour!</h2>
+        <form id="form">
+        <input type="password" id="pin" name="pin" placeholder="Enter Security PIN" autofocus="true">
+        <input type="button" value="check" id="check1" name="check" onclick="pincheck()"> 
+        <br>
+        <br>
+        <input type="number" id="num" name="num" placeholder="Enter Transfer value" autofocus="true">
+        <input type="button" value="check" id="check2" name="check" onclick="foundscheck()">
+            <br>
+            <br>
+            DESTINATION BANK:
+            <select id="select" onchange="selectbank()">
+            <option disabled selected="">Select Bank</option>
+            <option value="Brutanella Bank">Brutanella Bank</option>
+            <option value="Renegrero Bank">Renegrero Bank</option>
+            <option value="Jodido Bank">Jodido Bank</option>
+            <option value="Broken Bank">Broken Bank</option>
+            </select>
+            <br>
+            <br>    
+            <p id="result"></p>
+            <br>    
+            <input type="button" id="btn" name="btn" value="Transfer" onclick="transfer()">
+            <br>
+            <p id="time"></p>
+    </form>
+    </center>
+    <script src="paki.js"></script>
+</body>
+</html>
