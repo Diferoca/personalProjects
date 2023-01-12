@@ -36,4 +36,18 @@ do {
 
 console.log('fin del bucle');
 
-// Exercise 4 
+// Exercise 4 do wile
+
+// función que aumenta el valor recibido en 5 hasta un límite de 8 veces.
+// Retornar el valor final.
+
+function doWhile(num) {
+
+let contador = 0
+    do {
+       num += 5;
+       contador ++;
+    } while (contador <= 7)
+       return num;
+ 
+ }doWhile (5);
