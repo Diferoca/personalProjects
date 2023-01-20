@@ -8,6 +8,11 @@ for (let cont= 3; cont>=1; cont --) {
 }
 console.log("Tarjeta Bloqueada")
 
+let result = [];
+for (let cont = 0; cont <= 10; cont ++){
+    console.log(result.push(cont * 6));
+}console.log(result)
+
 // exercise 2 ciclo While
 // ingrese codigo de verificacion, si ingresa codigo correcto fin del bucle.
 
@@ -16,7 +21,7 @@ let codigo = '1234';
 
 while (x != codigo) {
     console.log("ingrese codigo nuevamente")
-    if(x == '')
+    if(x === '')
     break;
   
 }
