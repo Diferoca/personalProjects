@@ -1,7 +1,7 @@
 /*Aqui estamos creando el objeto el cual contiene
 las propiedades de (mycar).
 las propiedades se declaran con una palabra clave y
-se les asigna valor por medio de dos puntos, cada 
+se les asigna valor por medio de dos puntos (key, Value), cada 
 propiedad debe ir ceparado por una coma.*/
 
 let myCar = {
@@ -14,7 +14,8 @@ console.log(myCar.mark);
 /* variacion del objeto con una funcion dentro.
 Dentro del objeto se crea una propiedad que contenga una funcion
 que en este caso en lugar de estar llamando cada propiedad
-por ceparado nos muestre todos las propiedades del objeto de una vez.
+por ceparado nos muestre todos las propiedades del objeto de una vez 
+//** A esto se le conoce o se le llama METODO.
 ¡importante! la palabra (this) en el caso de objetos hace referencia 
 al objeto; es como si dijeramos Car.mark o car.model*/
 
