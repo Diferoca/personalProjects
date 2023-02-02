@@ -5,29 +5,40 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Monsters Battle</title>
-  <script src="code.js"></script>
+  <script src="./JScode/monstersCode.js"></script> <!--Script to merge the JS code with html file. Explanation of what happening here: The point means that we're work in the same folder where is our html file. Then it shows the route where we storaged our JS file.-->
+  
 </head>
 <body>
-  <h1>
+  <h1> <!--The (h1) to (h6) elements represent six levels of section headings. (h1) is the highest section level and (h6) is the lowest.-->
     <strong>Battle!!!</strong> 🔥💧🌱
   </h1>
-  <section id=" Select-Monster">
+  <section id=" Select-Monster"> <!--The (Section) element represents a generic standalone section of a document, which doesn't have a more specific semantic element to represent it. Sections should always have a heading, with very few exceptions.-->
     <h2>Select your monster</h2>
 
-    Monsters
+    <label for="Tsunami">Tsunami</label> <!--The (label) element represents a caption for an item in a user interface.-->
+    <input type="radio" name="Monsters" id="Tsunami"/> <br><!--The (input) element is used to create interactive controls for web-based forms in order to accept data from the user and exist a wide variety of types of input data and control widgets-->
 
-    <button>Select</button>
+    <label for="Earthquake">Earthquake</label>
+    <input type="radio" name="Monsters" id="Earthquake"/><br>
+
+    <label for="Firewave">Firewave</label>
+    <input type="radio" name="Monsters" id="Firewave"/><br>
+
+    <label for="Cloneboth0">Cloneboth0</label>
+    <input type="radio" name="Monsters" id="Cloneboth0"/><br><br>
+
+    <button id="button-selectMosnter">Select</button>
 
   </section>
 
-  <section id=" Select-Attack">
+  <section id="Select-Attack">
     <h2>Select your attack</h2>
-    <p>Your Monster have <span>3</span> lives</p>
-    <p>Opponent Monster have <span>3</span> lives</p>
+    <p>Your Monster is <span id="monsterPlayer"></span> and it have <span>3</span> lives</p>
+    <p>Opponent Monster is <span id="monsterOpponent"></span> and it have <span>3</span> lives</p>
     <p>
-    <button>Fire 🔥</button>
-    <button>Water 💧</button>
-    <button>Earth 🌱</button>
+    <button id="button-Fire">Fire 🔥</button>
+    <button id="button-Water">Water 💧</button>
+    <button id="button-Earth">Earth 🌱</button>
     </p>
   </section>
 
@@ -36,7 +47,8 @@
   </section>
 
   <section id="Restart">
-    <button>Restart</button>
+    <button id="button-Restart">Restart</button>
   </section>
+  
 </body>
 </html>
