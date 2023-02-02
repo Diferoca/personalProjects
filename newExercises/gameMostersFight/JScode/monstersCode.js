@@ -34,7 +34,7 @@ function selectMosterPlayer (){
 
 function selectMosterOpponent (){
   function numRandom(min, max) {
-    Math.round(Math.random()*(max-min+1))+min;
+    return Math.round(Math.random()*(max-min+1))+min;
   }
   let opponentAtack = numRandom (1, 4);
   let spanMonsterOpponent = document.getElementById('monsterOpponent');
@@ -48,10 +48,13 @@ function selectMosterOpponent (){
   else if(opponentAtack == 3){
     spanMonsterOpponent.innerHTML = 'Firewave';
   }
-  else{
-    spanMonsterOpponent.innerHTML = 'Cloneboth0';
+  else if (opponentAtack == 4){
+    spanMonsterOpponent.innerHTML = 'Cloneboth0'; 
   }
+
   
 }
 
 window.addEventListener('load', iniciarjuego) //This attribute can be used for tell to browser that load first the html document without matter where is the position of our script in into html document. 
+
+
