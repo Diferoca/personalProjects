@@ -23,7 +23,7 @@ function selectMosterPlayer (){
   let inputCloneboth0 = document.getElementById('Cloneboth0')
   let spanMonsterPlayer = document.getElementById('monsterPlayer')
   
-// TODO: The property checked is used for ckeck if the id was selected by the user. 
+// The property checked is used for ckeck if the id was selected by the user. 
 
   if (inputTsunami.checked){
     spanMonsterPlayer.innerHTML = 'Tsunami'
@@ -64,36 +64,61 @@ function selectMosterOpponent (){
 }
 
 function fireAttack(){
-  monsterAttackPlayer = 'Fire';
+  monsterAttackPlayer = 'FIRE';
   opponentRandomAtack ();
 }
 function waterAttack(){
-  monsterAttackPlayer = 'Water';
+  monsterAttackPlayer = 'WATER';
   opponentRandomAtack ();
 }
 function earthAttack(){
-  monsterAttackPlayer = 'Earth';
+  monsterAttackPlayer = 'EARTH';
   opponentRandomAtack ();
 }
 function twinAttack(){
-  monsterAttackPlayer = 'Twin';
+  monsterAttackPlayer = 'TWIN';
   opponentRandomAtack ();
 }
 function opponentRandomAtack (){
   let randomAttack = Random (1, 4);
 
   if (randomAttack == 1){
-    opponentAttack = 'Fire';
+    opponentAttack = 'FIRE';
   }else if (randomAttack == 2){
-    opponentAttack = 'Water';
+    opponentAttack = 'WATER';
   }else if (randomAttack == 3){
-    opponentAttack = 'Earth';
+    opponentAttack = 'EARTH';
   }else if (randomAttack == 4){
-    opponentAttack = 'Twin';
+    opponentAttack = 'TWIN';
   }
 
+  fight();
+
 }
-  
+
+function fight(){
+  if (monsterAttackPlayer == opponentAttack){
+    theMessage('Draw');
+  } else if (monsterAttackPlayer == 'WATER' && opponentAttack == 'FIRE'){
+    theMessage('You Win!! 💪')
+  } else if (monsterAttackPlayer == 'WATER' && opponentAttack == 'EARTH'){
+    theMessage('You Win!! 💪')
+  } else if (monsterAttackPlayer == 'EARTH' && opponentAttack == 'FIRE'){
+    theMessage('You Win!! 💪')
+  } else if (monsterAttackPlayer == 'WATER' && opponentAttack == 'TWIN'){
+    theMessage('You Win!! 💪')
+  } else {
+    theMessage('You lose 😒')
+  }
+}
+
+function theMessage (result){
+  let messageSection = document.getElementById('Message');
+  let message = document.createElement ('p');
+  message.innerHTML = 'Your Monster attacked with ' + monsterAttackPlayer + ' Opponent Monster attacked whit '  + opponentAttack + ' ' + result;
+  messageSection.appendChild (message);
+}
+
 function Random(min, max) {
     return Math.round(Math.random()*(max-min+1))+min;
 }
@@ -101,6 +126,6 @@ function Random(min, max) {
 
 
 
-window.addEventListener('load', iniciarjuego) //This attribute can be used for tell to browser that load first the html document without matter where is the position of our script in into html document. 
+window.addEventListener('load', iniciarjuego) //This attribute can be used for tell to browser that load first the html document without matter where is the position of our script into html document. 
 
 
