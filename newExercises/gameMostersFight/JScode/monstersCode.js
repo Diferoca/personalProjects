@@ -1,9 +1,11 @@
 let monsterAttackPlayer;
 let opponentAttack;
+let playerLives = 3;
+let opponentLives = 3;
 
 function iniciarjuego() {
   let bottonMosterPlayer = document.getElementById('button-selectMosnter');
-  bottonMosterPlayer.addEventListener('click', selectMosterPlayer);
+  bottonMosterPlayer.addEventListener('click',selectMosterPlayer);
 
   let fireButton = document.getElementById ('buttonFire');
   fireButton.addEventListener ('click', fireAttack);
@@ -97,26 +99,66 @@ function opponentRandomAtack (){
 }
 
 function fight(){
+  let spanPlayerLives = document.getElementById('monsterPlayerlives');
+  let spanOpponetLives = document.getElementById('opponetMonsterLives')
+
   if (monsterAttackPlayer == opponentAttack){
     theMessage('Draw');
-  } else if (monsterAttackPlayer == 'WATER' && opponentAttack == 'FIRE'){
+  } else if (monsterAttackPlayer == 'EARTH' && opponentAttack == 'TWIN'){
+    theMessage('Draw')
+  } else if (monsterAttackPlayer == 'FIRE' && opponentAttack == 'WATER'){
+    opponentLives --;
+    spanOpponetLives.innerHTML = opponentLives
     theMessage('You Win!! 💪')
   } else if (monsterAttackPlayer == 'WATER' && opponentAttack == 'EARTH'){
+    opponentLives --;
+    spanOpponetLives.innerHTML = opponentLives
     theMessage('You Win!! 💪')
   } else if (monsterAttackPlayer == 'EARTH' && opponentAttack == 'FIRE'){
+    opponentLives --;
+    spanOpponetLives.innerHTML = opponentLives
     theMessage('You Win!! 💪')
   } else if (monsterAttackPlayer == 'WATER' && opponentAttack == 'TWIN'){
+    opponentLives --;
+    spanOpponetLives.innerHTML = opponentLives
+    theMessage('You Win!! 💪')
+  } else if (monsterAttackPlayer == 'TWIN' && opponentAttack == 'FIRE'){
+    opponentLives --;
+    spanOpponetLives.innerHTML = opponentLives
+    theMessage('You Win!! 💪')
+  } else if (monsterAttackPlayer == 'TWIN' && opponentAttack == 'WATER'){
+    opponentLives --;
+    spanOpponetLives.innerHTML = opponentLives
     theMessage('You Win!! 💪')
   } else {
     theMessage('You lose 😒')
+    playerLives --
+    spanPlayerLives.innerHTML = playerLives;
   }
+  contLives();
 }
 
+function contLives() {
+    if (playerLives == 0){
+      finalMessage('You lose the Battle Opponent Win 😒😒😒')
+    }
+    else if ( opponentLives == 0){
+      finalMessage('Opponent lose the Battle You Win 💪🏆🏆') 
+    }
+  }
+  
 function theMessage (result){
   let messageSection = document.getElementById('Message');
   let message = document.createElement ('p');
   message.innerHTML = 'Your Monster attacked with ' + monsterAttackPlayer + ' Opponent Monster attacked whit '  + opponentAttack + ' ' + result;
   messageSection.appendChild (message);
+}
+
+function finalMessage (finalResult){
+  let finalMessageSection = document.getElementById('Message');
+  let message = document.createElement ('p');
+  message.innerHTML = finalResult;
+  finalMessageSection.appendChild (message);
 }
 
 function Random(min, max) {
