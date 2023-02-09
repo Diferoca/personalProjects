@@ -3,7 +3,14 @@ let opponentAttack;
 let playerLives = 3;
 let opponentLives = 3;
 
-function iniciarjuego() {
+function startgame() {
+
+  let sectionSelectAtack = document.getElementById ('Select-Attack');
+  sectionSelectAtack.style.display = 'none';
+
+  let sectionRestar = document.getElementById('Restart');
+  sectionRestar.style.display = 'none';
+
   let bottonMosterPlayer = document.getElementById('button-selectMosnter');
   bottonMosterPlayer.addEventListener('click',selectMosterPlayer);
 
@@ -15,9 +22,17 @@ function iniciarjuego() {
   earthButton.addEventListener ('click', earthAttack); 
   let twinButton = document.getElementById ('buttontwin');
   twinButton.addEventListener ('click', twinAttack);
+  let resetButton = document.getElementById('buttonRestart');
+  resetButton.addEventListener ('click', restartGame)
 }
 
 function selectMosterPlayer (){
+
+  let sectionSelectMonster = document.getElementById ('Select-Monster');
+  sectionSelectMonster.style.display = 'none';
+
+  let sectionSelectAtack = document.getElementById ('Select-Attack');
+  sectionSelectAtack.style.display = 'block';
 
   let inputTsunami = document.getElementById('Tsunami')
   let inputEarthquake = document.getElementById('Earthquake')
@@ -139,11 +154,14 @@ function fight(){
 }
 
 function contLives() {
+
     if (playerLives == 0){
-      finalMessage('You lose the Battle Opponent Win 😒😒😒')
-    }
+      finalMessage('You lose the Battle Opponent Win 😒😒😒');
+      returnButtonReset();
+    } 
     else if ( opponentLives == 0){
-      finalMessage('Opponent lose the Battle You Win 💪🏆🏆') 
+      finalMessage('Opponent lose the Battle You Win 💪🏆🏆');
+      returnButtonReset();
     }
   }
   
@@ -159,15 +177,36 @@ function finalMessage (finalResult){
   let message = document.createElement ('p');
   message.innerHTML = finalResult;
   finalMessageSection.appendChild (message);
+
+  let fireButton = document.getElementById ('buttonFire');
+  fireButton.disabled = true;
+  let waterButton = document.getElementById ('buttonWater');
+  waterButton.disabled = true;
+  let earthButton = document.getElementById ('buttonEarth');
+  earthButton.disabled = true; 
+  let twinButton = document.getElementById ('buttontwin');
+  twinButton.disabled = true;
+  // The method disabled is used to disable every buttom that you need so in this case we use it to disable the buttons when the function cont lives get to cero.
+}
+
+function restartGame (){
+  
+  location.reload();
+  
 }
 
 function Random(min, max) {
     return Math.round(Math.random()*(max-min+1))+min;
 }
 
+function returnButtonReset(){
+  let sectionRestar = document.getElementById('Restart');
+  sectionRestar.style.display = 'block';
+}
 
 
 
-window.addEventListener('load', iniciarjuego) //This attribute can be used for tell to browser that load first the html document without matter where is the position of our script into html document. 
+
+window.addEventListener('load', startgame) //This attribute can be used for tell to browser that load first the html document without matter where is the position of our script into html document. 
 
 
