@@ -1,0 +1,29 @@
+/*Basic selectors
+1. Type selector: Selects all elements that have the given node name. e.g input will match any <input> element.
+
+h1 {
+  color: dark;
+}
+*/
+/* 2. Class selector: Selects all elements that have the given class attribute.e.g .index will match any element that has class="index".
+<h1 class ="title" ><strong>Battle!!!</strong> 🔥💧🌱
+  </h1>
+
+  .title {
+    color: blue; 
+  }
+*/
+
+/* 3. id selector: Selects an element based on the value of its id attribute. There should be only one element with a given ID in a document. e.g #toc will match the element that has id="toc".
+
+#title {
+  color: darkslategrey;
+}
+*/
+
+.title {
+  color: black;
+  width: 270px;
+  height: 60px;
+  background-color: #B2BABB;
+}
