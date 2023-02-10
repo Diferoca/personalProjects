@@ -204,9 +204,6 @@ function returnButtonReset(){
   sectionRestar.style.display = 'block';
 }
 
-
-
-
 window.addEventListener('load', startgame) //This attribute can be used for tell to browser that load first the html document without matter where is the position of our script into html document. 
 
 
