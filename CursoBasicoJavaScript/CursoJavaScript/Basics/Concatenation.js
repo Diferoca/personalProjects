@@ -6,4 +6,4 @@ function concatenation(noun, adjetive, verb, adverb){
   return result;
 }
 
-console.log(concatenation('dog', 'big', 'ran', 'quicky'));
+console.log(concatenation('dog', 'big', 'ran', 'slowly'));
