@@ -24,7 +24,78 @@ let Car = {
     model:'acura',
     year:2019,
     detailofcar: function () {
-        console.log(`car: ${this.mark} ${this.model} ${this.year}`);
+        console.log(`car: ${this.mark} ${this.model} ${this.year} ${this.kilometers}`);
+    }
+}
+/* If we want to add a property of our object, we can use dot notation 
+or bracket notation.*/
+
+Car.kilometers = 80000;
+//Car['kilometers'] = 80000; 
+Car.detailofcar ();
+
+/* If We want to delete any property of our object, we can use the reserve word 
+(delete) */
+
+delete Car.kilometers;
+console.log(Car);
+
+/* When we need to check if an object has a property, we can use the method 
+called (hasOwnProperty()) */
+
+let motorcycle = {
+    mark:'Honda',
+    model:'pilot',
+    year:2019,
+}
+
+function checkObj(checkProp){
+    if (motorcycle.hasOwnProperty(checkProp)){
+        return motorcycle[checkProp];
+    }else{
+        return 'Not found';
+    }
+}
+console.log(checkObj('motor'));
+
+/* If we need to access to property of nested objects we can do this:*/
+
+let myStorage = {
+    'box1' : {
+        'inside' : {
+            'subBox1' : 'gloves',
+            'subBox2' : 'chacket',
+        },
+        'outside': {
+            'mess': 'socks'
+        },
     }
 };
-Car.detailofcar();
+
+let allBoxes = myStorage.box1.inside['subBox2'];
+console.log(allBoxes);
+
+/* If we need to access to property of nested arrays we can use a combination 
+between dot notation and bracket notation */
+
+let myStorage1 = [
+    {
+        'type' : 'clothes',
+        'box2' : [
+            'socks',
+            'underwear',
+            'pants'
+        ]
+    },
+    {
+        'type' : 'clothes2',
+        'box3' : [
+            'tshirt',
+            'shirt',
+            'red tie'
+        ]
+    }
+]
+
+let secondTree = myStorage1[0].box2[2];
+console.log(secondTree);
