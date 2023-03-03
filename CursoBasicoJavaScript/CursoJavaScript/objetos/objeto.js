@@ -41,7 +41,7 @@ delete Car.kilometers;
 console.log(Car);
 
 /* When we need to check if an object has a property, we can use the method 
-called (hasOwnProperty()) */
+called (hasOwnProperty())*/ 
 
 let motorcycle = {
     mark:'Honda',
@@ -56,7 +56,7 @@ function checkObj(checkProp){
         return 'Not found';
     }
 }
-console.log(checkObj('motor'));
+console.log(checkObj('serial'));
 
 /* If we need to access to property of nested objects we can do this:*/
 
@@ -99,3 +99,80 @@ let myStorage1 = [
 
 let secondTree = myStorage1[0].box2[2];
 console.log(secondTree);
+
+/* We can use objects to replace the switch statement and if/else if chain because the objects can be thought of as a key/value storage. Notice the exercise below:*/
+
+function phoneticLookup(val) {
+    let result = "";
+
+    switch(val) {
+      case "alpha":
+        result = "Adams";
+        break;
+      case "bravo":
+        result = "Boston";
+        break;
+      case "charlie":
+        result = "Chicago";
+        break;
+      case "delta":
+        result = "Denver";
+        break;
+      case "echo":
+        result = "Easy";
+        break;
+      case "foxtrot":
+        result = "Frank";
+    }
+  
+    return result;
+  }
+  
+  phoneticLookup("charlie");
+
+  // TODO:  Switch statement refactor by use an object!!!
+
+function phoneticLookup(val) {
+    let result = "";
+    let lookUp = {
+      "alpha": "Adams",
+      "bravo": "Boston",
+      "charlie": "Chicago",
+      "delta": "Denver",
+      "echo": "Easy",
+      "foxtrot": "Frank"
+    }
+  let checkVal = lookUp[val];
+  result = checkVal;
+  return result;
+  }
+  
+  phoneticLookup("charlie");
+
+
+  const myMusic = [
+    {
+      "artist": "Billy Joel",
+      "title": "Piano Man",
+      "release_year": 1973,
+      "formats": [
+        "CD",
+        "8T",
+        "LP"
+      ],
+      "gold": true
+    },
+  ]
+
+  myMusic[[]]=   {
+    "artist": "Michael Jackson",
+    "title": "Thriller",
+    "release_year": 1985,
+    "formats": [
+      "8T",
+      "LP"
+    ]
+}
+
+console.log(myMusic); 
+

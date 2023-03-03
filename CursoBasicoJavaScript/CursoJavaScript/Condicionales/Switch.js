@@ -17,11 +17,16 @@ switch (true)
 }
 
 /* If you have multiple inputs with the same output, you can represent them in a switch statement like this: */
+//* exercice count cards to bet or hold.
+/* Prameters
+Count Change	Cards
+    +1	       2, 3, 4, 5, 6
+     0	       7, 8, 9
+    -1	       10, 'J', 'Q', 'K', 'A'*/
 
 let count = 0;
 
 function cc(card) {
-  // Only change code below this line
 switch (card) {
   case 2:
   case 3:

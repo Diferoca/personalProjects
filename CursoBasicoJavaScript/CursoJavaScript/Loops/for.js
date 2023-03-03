@@ -1,8 +1,8 @@
 /* Loop for to make an array with Odd numbers */
-let i = 1;
+
 let myOddNumbers = [];
 
-for (i; i < 20; i += 2) {
+for (i = 1; i < 20; i += 2) {
   myOddNumbers.push(i);
     
 }
@@ -25,3 +25,27 @@ for (let i = 0; i < contBackwards.length; i++) {
 }
 console.log(total)
 
+/* Loop for to create an array with decrease values */
+
+let decrease = [];
+
+for (let i = 10; i >= 0; i--) {
+  decrease.push(i);
+}
+console.log(decrease);
+
+/* sometimes we can find Multi-dimensional arrays and we need to use nesting (for) loops */
+
+function multiplyAll(arr) {
+  let product = 1;
+
+  for (let i = 0; i < arr.length; i++) {//We check the length of arr in the [i] for loop, and the arr[i] length in the [j] for loop.  
+   for (let j = 0; j < arr[i].length; j++) {
+    product *= arr[i][j];
+  }
+}
+  console.log(product)
+  return product;
+}
+
+multiplyAll([[1, 2], [3, 4], [5, 6, 7]]);
